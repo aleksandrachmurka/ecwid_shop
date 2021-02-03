@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+}
+
+/*HEADER*/
+.header {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  font: lighter 2.6rem "Cinzel", serif;
+  z-index: 100;
+}
+
+.navbar__items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  list-style-type: none;
+}
+
+.navbar__item {
+  padding: 2%;
+}
+.navbar__link {
+  height: 50%;
+  width: 100%;
+  white-space: nowrap;
+  color: #dfd286;
+  text-decoration: none;
+}
+.navbar__link:hover,
+.navbar__link:focus,
+.navbar__link:active {
+  text-decoration: underline;
+}
+
+.hamburger {
+  display: none;
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+  border: 0;
+  margin: 0;
+  transition: transform 0.3s 0.1s ease-in-out;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  left: 0;
+  top: 50%;
+  transform: translateY(50%);
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  background-color: #dfd286;
+  transition: background-color 0.3s 0.1s ease-in-out;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  background-color: #dfd286;
+  transition: transform 0.3s 0.2s ease-in-out;
+}
+
+.hamburger-inner::after {
+  top: 10px;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  background-color: #dfd286;
+  transition: transform 0.3s 0.2s ease-in-out;
+}
+
+.hamburger--active {
+  transform: translate(70px, 130px);
+  z-index: 100;
+}
+
+.hamburger--active .hamburger-inner {
+  background-color: transparent;
+}
+
+.hamburger--active .hamburger-inner:before {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger--active .hamburger-inner:after {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/*BODY, MAIN*/
+body {
+  margin: 0 auto;
+  height: 100vh;
+  font-family: "Cinzel", serif;
+}
+
+.content {
+  height: 100vh;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+}
+
+.text-container {
+  padding: 0 5%;
+}
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+/*TEXT*/
+
+h1 {
+  padding: 3%;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*BANNER*/
+.banner {
+  height: 400px;
+  padding-top: 5%;
+  background: url("images/glitter.jpg") no-repeat top center fixed;
+  background-size: cover;
+}
+
+.banner2 {
+  height: 300px;
+  background: url("images/glitter2.jpg") no-repeat top center fixed;
+  background-size: cover;
+}
+
+/*PRODUCTS*/
+.products {
+  position: relative;
+  margin: -80px auto 0;
+  width: 80%;
+  background-color: white;
+}
+
+/*ABOUT*/
+
+.about {
+  position: relative;
+  width: 80%;
+  margin: -80px auto 0;
+  background-color: white;
+}
+
+.about p {
+  font-size: 1rem;
+  font-family: "Lora", serif;
+  line-height: 2rem;
+  text-align: left;
+}
+
+/*CONTACT*/
+.contact {
+  background: url("images/glitter.jpg") no-repeat top center fixed;
+  background-size: cover;
+  color: #dfd286;
+  padding: 7% 0;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.contact p {
+  font-size: 1.5rem;
+}
+
+.fa,
+.fab {
+  margin-right: 1em;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #dfd286;
+}
+
+.fab:hover {
+  transform: scale(1.3);
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 930px) {
+  .navbar {
+    font-size: 2em;
+  }
+
+  .navbar__items {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar__items {
+    flex-direction: column;
+    font-size: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-250px);
+    transition: transform 0.3s 0.1s ease-in-out;
+  }
+
+  .navbar__items--active {
+    transform: translateX(0px);
+    position: static;
+    display: block;
+  }
+
+  .logo--hidden {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-block;
+  }
+
+  .contact p {
+    font-size: 1rem;
+  }
+}

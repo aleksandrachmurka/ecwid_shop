@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="index,follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Luxury Gifts">
+	<meta name="keywords" content="prezenty, akcesoria, podarunki">
+	<title>Luxury Gifts</title>
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lora&family=Cinzel&display=swap" rel="stylesheet"> 
+	<link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<script defer src="index.js"></script>
+	<link rel="preload" as="style" onload="this.rel='stylesheet'" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="header">
+		<nav class="navbar">
+			<img src="images/logo.png" alt="logo" class="logo" data-link="home" role="link" aria-label="home" tabindex="0"/>
+			<button class="hamburger">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+			<ul class="navbar__items">
+				<li class="navbar__item">
+						<a class="navbar__link" href="#products" data-link="shows">Produkty</a>
+				</li>
+				<li class="navbar__item">
+					<a class="navbar__link" href="#about" data-link="about">O nas</a>
+				</li>
+				<li class="navbar__item">
+						<a class="navbar__link" href="#contact" data-link="contact">Kontakt</a>
+				</li>
+				<div data-custom-icon-url="images/shopping-bag.svg" class="ec-cart-widget"></div>
+					<div>
+					<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?44311247&data_platform=code&data_date=2021-01-25" charset="utf-8"></script>
+					<script type="text/javascript">Ecwid.init();</script>
+				</div>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<div class="banner"></div>
+
+		<section class="products" id="products">
+			<div class="title-container">
+				<h1>Produkty</h1>
+			</div>
+			<div class="products-container">
+				<div id="my-store-44311247"></div>
+				<div>
+					<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?44311247&data_platform=code&data_date=2021-01-25" charset="utf-8"></script><script type="text/javascript"> xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-44311247");</script>
+				</div>
+			</div>
+		</section>
+
+		<div class="banner2"></div>
+
+		<section id="about" class="about-container">
+			<div class="about">
+				<div class="title-container">
+					<h1>O nas</h1>
+				</div>
+				<div class="text-container">
+					<p>
+						Witamy serdecznie na naszej stronie internetowej PM Luxury Gifts. 
+						Zapraszamy do świata luksusu oraz blasku.
+					</p> 
+					<p>
+						Nasza firma powstała z myślą o osobach, które poszukują wyjątkowych gadżetów oraz akcesorii.
+					</p> 
+					<p>
+						Wszystkie produkty są zdobione przez nas ręcznie, dbamy o to aby każdy detal był wykonany z największą stanrannością o szczegóły. 
+					</p>
+					<p>
+						Sami projektujemy i wykonujemy zdobienia dzięki czemu mamy wyjątkowe i niepowtarzalne produkty.
+					</p>
+					<p>
+						Do naszych wyrobów używamy materiałów najwyższej jakości, zarówno tkanin jak i kamieni, dzięki czemu są one trwałe.
+					</p>
+					<p>
+						Nasz zespół jest w stanie ozdobić kamieniami praktycznie wszystko, przyjmujemy również zamówienia indywidualne.
+					</p> 
+					<p>
+						Jeżeli potrzebujesz wyjątkowego prezentu lub sam marzysz o oryginalnym gadżecie nasz sklep jest idealnym miejscem gdzie możesz spełnić swoje marzenia.
+					</p>
+				</div>
+			</div>	
+		</section>
+
+		<section class="contact" id="contact">
+			<div class="contact-container">
+				<h1>Kontakt</h1>
+				<div class="row-container">	
+					<i class="fa fa-phone"></i>
+					<p href="tel:+48576345328">+48 576 345 328</p>
+				</div>
+				<div class="row-container">
+					<i class="fa fa-envelope"></i>
+					<p href="mailto:patrycja.-marzec@wp.pl">pmluxurygifts@gmail.com</p>
+				</div>
+				<div class="row-container">
+					<a href="https://www.facebook.com/PM-Luxury-Gifts-100993775180614">
+						<i class="fab fa-facebook"></i>
+					</a>
+					<a href="https://www.instagram.com/pm_luxury_gifts/">
+						<i class="fab fa-instagram"></i>
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	<script>
+		const hamburger = document.querySelector('.hamburger');
+		const nav = document.querySelector('.navbar__items');
+		const logo = document.querySelector('.logo');
+	
+		const handleClick = () => {
+			hamburger.classList.toggle('hamburger--active');
+			nav.classList.toggle('navbar__items--active');
+			logo.classList.toggle('logo--hidden')
+		};
+	
+		hamburger.addEventListener('click', handleClick);
+	</script>
+</body>
+</html>
